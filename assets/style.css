@@ -54,3 +54,120 @@
 [data-theme="dark"] .product-art{color:#14223a}
 [data-theme="dark"] .hero-cut{background:var(--off)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* Contrast corrections: explicit foreground/background pairs in both themes.
+   Yellow brand surfaces always use dark ink; dark surfaces use light ink. */
+:root{
+ --control-bg:#fff;--control-fg:#14223a;--focus-ring:#997a00;
+}
+.btn-gold,.btn-gold:hover,.cta,.cta h2,.cta p,.cta .btn-dark,.mobile-cta a:first-child{
+ color:#0b152a;
+}
+.btn-gold,.btn-gold:hover{background:#f4ed3c;border-color:#f4ed3c}
+.cta .btn-dark{background:#0b152a;color:#fff;border-color:#0b152a}
+.cta .btn-dark:hover{background:#243b5e;color:#fff}
+.btn-dark{background:#0b152a;color:#fff;border-color:#0b152a}
+.btn-dark:hover{background:#243b5e;color:#fff}
+.btn-outline,.btn-white{background:#fff;color:#14223a}
+.btn-ghost{color:#fff}
+.filter{background:#fff;color:#32445c}
+.filter[aria-pressed="true"]{background:#0b152a;color:#fff}
+.whatsapp-float{background:#137b43;color:#fff}
+:focus-visible{outline:3px solid var(--focus-ring);outline-offset:3px}
+[data-theme="dark"]{
+ --control-bg:#172941;--control-fg:#f1f6ff;--focus-ring:#f4ed3c;
+}
+[data-theme="dark"] .btn-gold,[data-theme="dark"] .btn-gold:hover{
+ background:#f4ed3c;color:#0b152a;border-color:#f4ed3c
+}
+[data-theme="dark"] .btn-dark,[data-theme="dark"] .btn-dark:hover{
+ background:#294b70;color:#fff;border-color:#6388b0
+}
+[data-theme="dark"] .btn-outline,[data-theme="dark"] .btn-white{
+ background:#233e60;color:#fff;border-color:#7e9aba
+}
+[data-theme="dark"] .btn-outline:hover,[data-theme="dark"] .btn-white:hover{
+ background:#355778;color:#fff;border-color:#b3c9de
+}
+[data-theme="dark"] .btn-ghost,[data-theme="dark"] .btn-ghost:hover{
+ color:#fff;border-color:#b1c5dd;background:#ffffff0d
+}
+[data-theme="dark"] .cta,[data-theme="dark"] .cta h2,[data-theme="dark"] .cta p{
+ background:#f4ed3c;color:#0b152a
+}
+[data-theme="dark"] .cta .btn-dark,[data-theme="dark"] .cta .btn-dark:hover{
+ background:#0b152a;color:#fff;border-color:#0b152a
+}
+[data-theme="dark"] .filter{
+ background:#233c59;border-color:#718aa6;color:#f4f7ff
+}
+[data-theme="dark"] .filter:hover{background:#315171;color:#fff}
+[data-theme="dark"] .filter[aria-pressed="true"]{
+ background:#f4ed3c;border-color:#f4ed3c;color:#0b152a
+}
+[data-theme="dark"] .form-card,[data-theme="dark"] .faq{
+ background:#172941;color:#eef3fb;border-color:#526b89
+}
+[data-theme="dark"] .form-card>p,[data-theme="dark"] .faq p,
+[data-theme="dark"] .text-block p,[data-theme="dark"] .tick-list li,
+[data-theme="dark"] .consent,[data-theme="dark"] .method p,
+[data-theme="dark"] .method a,[data-theme="dark"] .form-footnote{
+ color:#c4d3e5
+}
+[data-theme="dark"] .faq summary:after{color:#e7eef8}
+[data-theme="dark"] .method{
+ background:#1d334e;color:#eef3fb;border-color:#526b89
+}
+[data-theme="dark"] .note{
+ background:#3c351a;color:#fff3b4;border-color:#a28b31
+}
+[data-theme="dark"] .pills span{
+ border-color:#748ba6;color:#e1edfa
+}
+[data-theme="dark"] .step{border-color:#526b89}
+[data-theme="dark"] .step b{color:#c2d1e3}
+[data-theme="dark"] .feature-art{
+ background:linear-gradient(140deg,#8ea9c8,#8bb9a1);
+ color:#14223a
+}
+[data-theme="dark"] .icon-tile:not(.yellow):not(.green):not(.blue),
+[data-theme="dark"] .stat-icon{
+ background:#334f70;color:#e4f1ff
+}
+[data-theme="dark"] .icon-tile.yellow{color:#514910}
+[data-theme="dark"] .icon-tile.green{color:#174b31}
+[data-theme="dark"] .icon-tile.blue{color:#173d63}
+[data-theme="dark"] .product-art{color:#14223a}
+[data-theme="dark"] .mobile-cta{
+ background:#101f35;border-top-color:#526b89
+}
+[data-theme="dark"] .mobile-cta a{
+ background:#294562;color:#fff
+}
+[data-theme="dark"] .mobile-cta a:first-child{
+ background:#f4ed3c;color:#0b152a
+}
+[data-theme="dark"] .pref-field select{
+ background:#172941;color:#fff;border-color:#7c9abb
+}
+[data-theme="dark"] .field :is(input,select,textarea){
+ background:#102039;color:#f5f8ff;border-color:#8da5c0
+}
+[data-theme="dark"] .field :is(input,textarea)::placeholder{color:#bccde0;opacity:1}
+[data-theme="dark"] .field :is(input,select,textarea):focus{
+ border-color:#f4ed3c;box-shadow:0 0 0 3px #f4ed3c55
+}
+[data-theme="dark"] .link{color:#a9d5ff}
+[data-theme="dark"] .section.dark .link{color:#f4ed3c}
+[data-theme="dark"] .footer,[data-theme="dark"] .topbar{
+ background:#081225;color:#eef3fb
+}
+[data-theme="dark"] .footer-links a,[data-theme="dark"] .footer-links span,
+[data-theme="dark"] .footer p,[data-theme="dark"] .footer-bottom{
+ color:#c5d3e6
+}
+[data-theme="dark"] .whatsapp-float{background:#137b43;color:#fff}
+@media(max-width:760px){
+ .mobile-cta a:first-child{background:#f4ed3c;color:#0b152a}
+}
