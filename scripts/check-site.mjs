@@ -19,7 +19,7 @@ for (const page of pages) {
   }
   if (page !== '404.html' && !html.includes('Die Ding Dokter')) failures.push(page + ': missing brand name');
   const approvedLogo = 'ddd-logo.png';
-  const favicon = [...html.matchAll(/<link\s+rel="icon"\s+href="([^"]+)"\s+type="image\/jpeg">/g)];
+  const favicon = [...html.matchAll(/<link\s+rel="icon"\s+href="([^"]+)"\s+type="image\/png">/g)];
   if (favicon.length !== 1 || favicon[0][1] !== '/assets/' + approvedLogo) failures.push(page + ': favicon must use the approved logo');
   const brandImages = [...html.matchAll(/<span class="brand-icon"><img\s+src="([^"]+)"\s+alt=""[^>]*><\/span>/g)];
   if (brandImages.length !== 2 || brandImages.some(m => !m[1].endsWith('/assets/' + approvedLogo))) failures.push(page + ': header and footer must use the approved logo');
