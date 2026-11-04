@@ -269,3 +269,24 @@
  .header-inner{gap:4px}
  .mobile-cta a{font-size:.68rem}
 }
+
+
+/* Brand name in the primary menu: vivid yellow with sufficient contrast
+   on both light and dark headers without recoloring other navigation. */
+.header .brand-copy strong{
+ color:#f4ed3c;
+ background:#0b152a;
+ border-radius:7px;
+ padding:4px 8px;
+ display:inline-block;
+ width:max-content;
+ max-width:100%;
+ line-height:1.2;
+}
+[data-theme="dark"] .header .brand-copy strong{
+ color:#f4ed3c;
+ background:#0b152a;
+}
+@media(max-width:370px){
+ .header .brand-copy strong{padding:3px 5px;font-size:.70rem}
+}
