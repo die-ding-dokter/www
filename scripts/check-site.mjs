@@ -8,6 +8,7 @@ const pages = [
   'about/index.html', 'contact/index.html', 'privacy/index.html', '404.html'
 ];
 const failures = [];
+if (!existsSync(join(root, 'assets/1fbceceb-85ae-4236-a82e-68f10934cc45.jpeg'))) failures.push('Approved site logo is missing');
 let inspectedLinks = 0;
 for (const page of pages) {
   const path = join(root, page);
@@ -17,6 +18,12 @@ for (const page of pages) {
     if (!html.includes(marker)) failures.push(page + ': missing ' + marker);
   }
   if (page !== '404.html' && !html.includes('Die Ding Dokter')) failures.push(page + ': missing brand name');
+  const approvedLogo = '1fbceceb-85ae-4236-a82e-68f10934cc45.jpeg';
+  const favicon = [...html.matchAll(/<link\s+rel="icon"\s+href="([^"]+)"\s+type="image\/jpeg">/g)];
+  if (favicon.length !== 1 || favicon[0][1] !== '/assets/' + approvedLogo) failures.push(page + ': favicon must use the approved logo');
+  const brandImages = [...html.matchAll(/<span class="brand-icon"><img\s+src="([^"]+)"\s+alt=""[^>]*><\/span>/g)];
+  if (brandImages.length !== 2 || brandImages.some(m => !m[1].endsWith('/assets/' + approvedLogo))) failures.push(page + ': header and footer must use the approved logo');
+  if (!html.includes('https://www.diedingdokter.co.za/assets/' + approvedLogo)) failures.push(page + ': social preview must use approved logo');
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);
   if (new Set(ids).size !== ids.length) failures.push(page + ': duplicate element ids');
   const links = [...html.matchAll(/\b(?:href|src)="([^"]+)"/g)].map(m => m[1]);
